@@ -25,7 +25,7 @@ public class GetDeviceController{
     //Endpoint show device by ID
     @Validated
     @GetMapping("/getIdDevices/{p_id}")
-    public ResponseEntity<DeviceEntity> getIdDevices(@PathVariable @Size(min = 2, max = 16) Long p_id){
+    public ResponseEntity<DeviceEntity> getIdDevices(@PathVariable @Size(min = 1, max = 16) Long p_id){
 
         return devServ.getIdDevice(p_id);
     }
