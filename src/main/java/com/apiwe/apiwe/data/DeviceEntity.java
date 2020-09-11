@@ -1,21 +1,22 @@
 package com.apiwe.apiwe.data;
 
+import javax.validation.constraints.Size;
 import java.sql.Timestamp;
 
-
 public class DeviceEntity{
-    private int id;
+    @Size(min = 1, max = 16)
+    private long id;
     private String mac;
     private Timestamp time;
 
     public DeviceEntity(){
     }
 
-    public int getId(){
+    public long getId(){
         return id;
     }
 
-    public void setId( int ID ){
+    public void setId( long ID ){
         this.id = ID;
     }
 
@@ -35,7 +36,7 @@ public class DeviceEntity{
         this.time = time;
     }
 
-    public DeviceEntity( int id, String mac, Timestamp time ){
+    public DeviceEntity( long id, String mac, Timestamp time ){
         this.id = id;
         this.mac = mac;
         this.time = time;

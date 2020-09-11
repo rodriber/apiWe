@@ -28,7 +28,7 @@ public class DeviceRepository{
         }
         return listD;
     }
-    public DeviceEntity getIdDevice(Integer p_id){
+    public DeviceEntity getIdDevice(Long p_id){
         return listD.stream()
                 .filter(devi -> p_id.equals(devi.getId()))
                 .findAny()
@@ -44,12 +44,12 @@ public class DeviceRepository{
 
     public String addDevice(DeviceEntity in){
         listD.add (in);
-        return "Insertado";
+        return "Insert device";
     }
 
     public String delDevice(DeviceEntity in){
 
         listD.removeIf (i -> i.getId() == (in.getId()));
-        return "Borrado";
+        return "Deleted device";
     }
 }
