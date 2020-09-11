@@ -8,24 +8,21 @@ import java.util.List;
 
 public class DeviceRepository{
 
-    List<DeviceEntity> listD = new ArrayList<> ();
-    Timestamp ts1 = Timestamp.valueOf("2020-09-09 09:01:00");
-    DeviceEntity d1 = new DeviceEntity (1,"FF:FF:FF:FF:FF:FF", ts1);
-    Timestamp ts2 = Timestamp.valueOf("2020-09-09 09:05:00");
-    DeviceEntity d2 = new DeviceEntity (2,"A0:00:00:00:00:01", ts2);
-    Timestamp ts3 = Timestamp.valueOf("2020-09-09 09:11:00");
-    DeviceEntity d3 = new DeviceEntity (3,"A1:B2:C3:D4:E5:F6", ts3);
+    static List<DeviceEntity> listD = new ArrayList<> ();
+    private static final Timestamp ts1 = Timestamp.valueOf("2020-09-09 09:01:00");
+    private static final DeviceEntity d1 = new DeviceEntity (1,"FF:FF:FF:FF:FF:FF", ts1);
+    private static final Timestamp ts2 = Timestamp.valueOf("2020-09-09 09:05:00");
+    private static final DeviceEntity d2 = new DeviceEntity (2,"A0:00:00:00:00:01", ts2);
+    private static final Timestamp ts3 = Timestamp.valueOf("2020-09-09 09:11:00");
+    private static final DeviceEntity d3 = new DeviceEntity (3,"A1:B2:C3:D4:E5:F6", ts3);
 
-    private void cargaLista(){
+    public static void cargaLista(){
         listD.add(d1);
         listD.add(d2);
         listD.add(d3);
     }
 
     public List<DeviceEntity> getListDevice(){
-        if(listD.isEmpty ()) {
-            cargaLista ();
-        }
         return listD;
     }
     public DeviceEntity getIdDevice(Long p_id){
@@ -43,13 +40,13 @@ public class DeviceRepository{
     }
 
     public String addDevice(DeviceEntity in){
-        listD.add (in);
+        listD.add(in);
         return "Insert device";
     }
 
     public String delDevice(DeviceEntity in){
 
-        listD.removeIf (i -> i.getId() == (in.getId()));
+        listD.removeIf(i -> i.getId() == (in.getId()));
         return "Deleted device";
     }
 }
