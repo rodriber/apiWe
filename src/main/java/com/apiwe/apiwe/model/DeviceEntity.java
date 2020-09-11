@@ -1,4 +1,4 @@
-package com.apiwe.apiwe.data;
+package com.apiwe.apiwe.model;
 
 import javax.validation.constraints.Size;
 import java.sql.Timestamp;

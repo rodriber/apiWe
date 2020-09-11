@@ -1,6 +1,6 @@
 package com.apiwe.apiwe.controller;
 
-import com.apiwe.apiwe.data.DeviceEntity;
+import com.apiwe.apiwe.model.DeviceEntity;
 import com.apiwe.apiwe.service.DevicesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

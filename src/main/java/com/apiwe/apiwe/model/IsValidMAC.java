@@ -1,4 +1,4 @@
-package com.apiwe.apiwe.data;
+package com.apiwe.apiwe.model;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

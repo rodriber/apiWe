@@ -1,7 +1,7 @@
 package com.apiwe.apiwe.service;
 
-import com.apiwe.apiwe.data.DeviceEntity;
-import com.apiwe.apiwe.data.IsValidMAC;
+import com.apiwe.apiwe.model.DeviceEntity;
+import com.apiwe.apiwe.model.IsValidMAC;
 import com.apiwe.apiwe.repository.DeviceRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

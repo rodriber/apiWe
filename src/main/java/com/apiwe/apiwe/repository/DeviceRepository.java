@@ -1,6 +1,6 @@
 package com.apiwe.apiwe.repository;
 
-import com.apiwe.apiwe.data.DeviceEntity;
+import com.apiwe.apiwe.model.DeviceEntity;
 
 import java.sql.Timestamp;
 import java.util.ArrayList;
