@@ -2,20 +2,21 @@ package com.apiwe.apiwe.data;
 
 import java.sql.Timestamp;
 
+
 public class DeviceEntity{
-    private int ID;
+    private int id;
     private String mac;
     private Timestamp time;
 
     public DeviceEntity(){
     }
 
-    public int getID(){
-        return ID;
+    public int getId(){
+        return id;
     }
 
-    public void setID( int ID ){
-        this.ID = ID;
+    public void setId( int ID ){
+        this.id = ID;
     }
 
     public String getMac(){
@@ -34,8 +35,8 @@ public class DeviceEntity{
         this.time = time;
     }
 
-    public DeviceEntity( int ID, String mac, Timestamp time ){
-        this.ID = ID;
+    public DeviceEntity( int id, String mac, Timestamp time ){
+        this.id = id;
         this.mac = mac;
         this.time = time;
     }
@@ -43,7 +44,7 @@ public class DeviceEntity{
     @Override
     public String toString(){
         return "DeviceEntity{" +
-                "ID=" + ID +
+                "ID=" + id +
                 ", mac='" + mac + '\'' +
                 ", time=" + time +
                 '}';

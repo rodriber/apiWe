@@ -16,7 +16,19 @@ public class GetDeviceController{
 
     @GetMapping("/getDevices")
     public ResponseEntity<List<DeviceEntity>> getDevices(){
-        return devServ.getAllDevice ();
+        return devServ.getAllDevice();
+    }
+
+    @GetMapping("/getIdDevices/{p_id}")
+    public ResponseEntity<DeviceEntity> getIdDevices(@PathVariable Integer p_id){
+
+        return devServ.getIdDevice(p_id);
+    }
+
+    @GetMapping("/getMacDevices/{p_mac}")
+    public ResponseEntity<DeviceEntity> getIdDevices(@PathVariable String p_mac){
+
+        return devServ.getMacDevice(p_mac);
     }
 
     @PostMapping("/insDevice")

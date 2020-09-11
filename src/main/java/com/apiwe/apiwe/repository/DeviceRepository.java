@@ -21,19 +21,35 @@ public class DeviceRepository{
         listD.add(d2);
         listD.add(d3);
     }
-    public List<DeviceEntity> listDevice(){
+
+    public List<DeviceEntity> getListDevice(){
         if(listD.isEmpty ()) {
             cargaLista ();
         }
         return listD;
     }
+    public DeviceEntity getIdDevice(Integer p_id){
+        return listD.stream()
+                .filter(devi -> p_id.equals(devi.getId()))
+                .findAny()
+                .orElse(null);
+    }
+
+    public DeviceEntity getMacDevice(String p_mac){
+        return listD.stream()
+                .filter(devi -> p_mac.equals(devi.getMac()))
+                .findAny()
+                .orElse(null);
+    }
+
     public String addDevice(DeviceEntity in){
         listD.add (in);
-        return "true";
+        return "Insertado";
     }
+
     public String delDevice(DeviceEntity in){
 
-        listD.removeIf (i -> i.getID() == (in.getID()));
+        listD.removeIf (i -> i.getId() == (in.getId()));
         return "Borrado";
     }
 }
