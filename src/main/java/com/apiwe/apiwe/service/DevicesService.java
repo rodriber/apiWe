@@ -1,20 +1,30 @@
 package com.apiwe.apiwe.service;
 
 import com.apiwe.apiwe.data.DeviceEntity;
+import com.apiwe.apiwe.repository.DeviceRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import java.sql.Timestamp;
+import java.util.List;
 
 @Service
 public class DevicesService{
 
-    public ResponseEntity<DeviceEntity> getAllDevice (){
+    DeviceRepository deviceRepo = new DeviceRepository();
 
-        Timestamp ts1 = Timestamp.valueOf("2020-09-09 09:01:15");
-        DeviceEntity dd = new DeviceEntity (1,"FF:FF:FF:FF:FF:FF", ts1);
+    public ResponseEntity<List<DeviceEntity>> getAllDevice(){
 
-        return new ResponseEntity<> (dd, HttpStatus.OK);
+        return new ResponseEntity<> (deviceRepo.listDevice(), HttpStatus.OK);
     }
+
+    public ResponseEntity<String> insetDevice(DeviceEntity nuevo){
+        return new ResponseEntity<> (deviceRepo.addDevice(nuevo), HttpStatus.OK);
+    }
+
+    public ResponseEntity<String> deleteDevice(DeviceEntity baja){
+        return new ResponseEntity<> (deviceRepo.delDevice(baja), HttpStatus.OK);
+    }
+
 }

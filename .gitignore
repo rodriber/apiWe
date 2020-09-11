@@ -12,13 +12,13 @@ target/
 .settings
 .springBeans
 .sts4-cache
-
+MiProyecto-cd92c8766a7e.json
 ### IntelliJ IDEA ###
 .idea
 *.iws
 *.iml
 *.ipr
-
+MiProyecto-*.json
 ### NetBeans ###
 /nbproject/private/
 /nbbuild/
