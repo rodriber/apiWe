@@ -25,7 +25,7 @@ class GetDeviceControllerTest{
         mvc.perform(MockMvcRequestBuilders.get("/getDevices")
                 .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk());
-              //  .andExpect(content().string(equalTo("Greetings from Spring Boot!")));
+              //  .andExpect(content().string(equalTo("Devices!")));
     }
 
     @Test
@@ -92,6 +92,25 @@ class GetDeviceControllerTest{
     }
 
     @Test
-    void deleteDevices(){
+    void deleteDevicesOK() throws Exception{
+        DeviceRepository.cargaLista();
+        mvc.perform(MockMvcRequestBuilders.delete("/delDevice")
+                .contentType(MediaType.APPLICATION_JSON_VALUE)
+                .content("    {\n" +
+                        "        \"id\": 3\n" +
+                        "    }"))
+                .andExpect(status().isOk())
+                .andExpect(content().string(equalTo("Deleted device")));
+    }
+
+    @Test
+    void deleteDevicesNOK() throws Exception{
+        DeviceRepository.cargaLista();
+        mvc.perform(MockMvcRequestBuilders.delete("/delDevice")
+                .contentType(MediaType.APPLICATION_JSON_VALUE)
+                .content("    {\n" +
+                        "        \"id\": 4\n" +
+                        "    }"))
+                .andExpect(status().isNoContent());
     }
 }
